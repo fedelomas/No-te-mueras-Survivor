@@ -42,9 +42,11 @@
 			<Add directory="SFML/lib" />
 		</Linker>
 		<Unit filename="include/Gameplay.h" />
+		<Unit filename="include/Menu.h" />
 		<Unit filename="include/Personaje.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Gameplay.cpp" />
+		<Unit filename="src/Menu.cpp" />
 		<Unit filename="src/Personaje.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />

@@ -8,9 +8,6 @@ public:
 
 private:
 
-    void processEvents();  ///  Maneja eventos del teclado
-    void updateSelection();  ///  Resalta el botón seleccionado
-
     void processEvents();  /// Maneja eventos del teclado
     void updateSelection();  /// Resalta el botón seleccionado
 
@@ -22,9 +19,5 @@ private:
     sf::Sprite background;
 
     sf::Sprite buttons[3];  // Tres botones: Play, Options, Exit
-    int selectedIndex = 0;  /// Índice del botón seleccionado
-};
-
-    sf::Sprite buttons[3];  /// Tres botones: Play, Options, Exit
     int selectedIndex = 0;  /// Índice del botón seleccionado
 };

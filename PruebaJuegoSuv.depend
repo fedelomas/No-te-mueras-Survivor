@@ -428,9 +428,9 @@
 	<SFML/Graphics.hpp>
 	"Personaje.h"
 
-1749567195 source:d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\main.cpp
-	"Menu.h"
+1749581913 source:d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\main.cpp
 	"Gameplay.h"
+	"Menu.h"
 
 1749566839 d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\include\gameplay.h
 	<SFML/Graphics.hpp>
@@ -859,9 +859,9 @@
 	"Personaje.h"
 	<cmath>
 
-1749567108 source:d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\src\menu.cpp
+1749582145 source:d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\src\menu.cpp
 	"Menu.h"
 
-1749567108 d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\include\menu.h
+1749581772 d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\include\menu.h
 	<SFML/Graphics.hpp>
 
