@@ -1,8 +1,16 @@
+#include "Menu.h"
 #include "Gameplay.h"
-#include <SFML/Graphics.hpp>
 
 int main() {
-    Gameplay game;
-    game.run();
-    return 0;
+    sf::RenderWindow window(sf::VideoMode(1000, 650), "Survivor - Menú");
+
+    Menu menu(window);
+    int selection = menu.run();  /// Espera la opción del menú
+
+    if (selection == 0) {  /// Si el usuario presiona "Play"
+        Gameplay game;
+        game.run();  /// Inicia el juego solo si se selecciona "Play"
     }
+
+    return 0;
+}
