@@ -1,23 +1,25 @@
 #pragma once
 #include <SFML/Graphics.hpp>
+#include "SoundManager.h"
 
 class Menu {
 public:
     Menu(sf::RenderWindow& window);
-    int run();  /// Ejecuta el menú y devuelve la opción seleccionada
+    int run();  // Ejecuta el menú y devuelve la opción seleccionada
 
 private:
-
-    void processEvents();  /// Maneja eventos del teclado
-    void updateSelection();  /// Resalta el botón seleccionado
-
-    void render();  /// Dibuja el menú en pantalla
+    void processEvents();  //  Maneja eventos del teclado
+    void updateSelection();  //  Resalta el botón seleccionado
+    void render();  // Dibuja el menú en pantalla
+    void scaleButtons(float scaleFactor);
 
     sf::RenderWindow& window;
     sf::Texture backgroundTexture;
-    sf::Texture buttonTexture;
+    sf::Texture buttonTexture1;
     sf::Sprite background;
+    sf::Sprite buttons[5];
+    int selectedIndex = 0;
 
-    sf::Sprite buttons[3];  // Tres botones: Play, Options, Exit
-    int selectedIndex = 0;  /// Índice del botón seleccionado
+    SoundManager soundManager;  // Manejo de sonidos
 };
+

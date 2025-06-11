@@ -39,15 +39,18 @@
 			<Add library="sfml-graphics" />
 			<Add library="sfml-window" />
 			<Add library="sfml-system" />
+			<Add library="sfml-audio" />
 			<Add directory="SFML/lib" />
 		</Linker>
 		<Unit filename="include/Gameplay.h" />
 		<Unit filename="include/Menu.h" />
 		<Unit filename="include/Personaje.h" />
+		<Unit filename="include/SoundManager.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Gameplay.cpp" />
 		<Unit filename="src/Menu.cpp" />
 		<Unit filename="src/Personaje.cpp" />
+		<Unit filename="src/SoundManager.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>

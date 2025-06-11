@@ -10,7 +10,7 @@ int main() {
     if (selection == 0) {  /// "Play"
         Gameplay game;
         game.run();  /// Inicia el juego
-    } else if (selection == 2) {  /// "Exit"
+    } else if (selection == 4) {  /// "Exit"
         window.close();  /// Cierra la aplicación
     }
 
