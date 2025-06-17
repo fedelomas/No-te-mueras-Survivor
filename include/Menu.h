@@ -5,21 +5,29 @@
 class Menu {
 public:
     Menu(sf::RenderWindow& window);
-    int run();  // Ejecuta el menú y devuelve la opción seleccionada
+    int run();
+    void processEvents();
+    void render();
+    void loadOptionsMenu();
+    void loadMainMenu();
+    void updateSelection();
+    void scaleButtons(float scaleFactor);
+    void setSoundEffectsEnabled(bool enabled);
 
 private:
-    void processEvents();  //  Maneja eventos del teclado
-    void updateSelection();  //  Resalta el botón seleccionado
-    void render();  // Dibuja el menú en pantalla
-    void scaleButtons(float scaleFactor);
-
     sf::RenderWindow& window;
     sf::Texture backgroundTexture;
     sf::Texture buttonTexture1;
     sf::Sprite background;
-    sf::Sprite buttons[5];
-    int selectedIndex = 0;
+    sf::Sprite buttons[5];  // Botones del menú principal
+    sf::Sprite optionButtons[3];  // Botones del menú de opciones
+
+    bool musicEnabled = true;  // Estado de la música (activada por defecto)
+    bool soundEnabled = true;  // Estado de los efectos de sonido (activados por defecto)
+
+    int selectedIndex;
+    enum MenuState { MAIN_MENU, OPTIONS_MENU };
+    MenuState menuState = MAIN_MENU;
 
     SoundManager soundManager;  // Manejo de sonidos
 };
-

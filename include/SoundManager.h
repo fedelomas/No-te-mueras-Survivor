@@ -9,6 +9,7 @@ public:
     void playMenuMusic();
     void stopMenuMusic();
     void playSoundEffect(const std::string& soundName);
+    void setSoundEffectsEnabled(bool enabled);
 
 private:
     sf::Music menuMusic;
@@ -18,4 +19,7 @@ private:
     sf::Sound navigateSound;
     sf::SoundBuffer selectBuffer;
     sf::Sound selectSound;
+
+    bool soundEffectsEnabled = true;
+
 };

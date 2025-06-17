@@ -428,7 +428,7 @@
 	<SFML/Graphics.hpp>
 	"Personaje.h"
 
-1749615804 source:d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\main.cpp
+1749863797 source:d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\main.cpp
 	"Gameplay.h"
 	"Menu.h"
 
@@ -859,15 +859,15 @@
 	"Personaje.h"
 	<cmath>
 
-1749658003 source:d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\src\menu.cpp
+1750166239 source:d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\src\menu.cpp
 	"Menu.h"
 	"SoundManager.h"
 
-1749659624 d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\include\menu.h
+1750162805 d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\include\menu.h
 	<SFML/Graphics.hpp>
 	"SoundManager.h"
 
-1749602029 d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\include\soundmanager.h
+1750162980 d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\include\soundmanager.h
 	<SFML/Audio.hpp>
 	<string>
 
@@ -975,7 +975,7 @@
 	<SFML/Audio/Export.hpp>
 	<string>
 
-1749602029 source:d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\src\soundmanager.cpp
+1750163143 source:d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\src\soundmanager.cpp
 	"SoundManager.h"
 	<stdexcept>
 

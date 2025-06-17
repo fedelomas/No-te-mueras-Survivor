@@ -31,9 +31,16 @@ void SoundManager::stopMenuMusic() {
 }
 
 void SoundManager::playSoundEffect(const std::string& soundName) {
+    if (!soundEffectsEnabled) return;  // Evita reproducir sonidos si están desactivados
+
     if (soundName == "navigate") {
         navigateSound.play();
     } else if (soundName == "select") {
         selectSound.play();
     }
 }
+
+void SoundManager::setSoundEffectsEnabled(bool enabled) {
+    soundEffectsEnabled = enabled;  // Cambia el estado de los efectos de sonido
+}
+
