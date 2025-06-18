@@ -42,6 +42,7 @@
 			<Add library="sfml-audio" />
 			<Add directory="SFML/lib" />
 		</Linker>
+		<Unit filename="include/Boss.h" />
 		<Unit filename="include/Enemigo.h" />
 		<Unit filename="include/Entity.h" />
 		<Unit filename="include/EntityManager.h" />
@@ -52,6 +53,7 @@
 		<Unit filename="include/PocionDeVida.h" />
 		<Unit filename="include/SoundManager.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/Boss.cpp" />
 		<Unit filename="src/Enemigo.cpp" />
 		<Unit filename="src/Entity.cpp" />
 		<Unit filename="src/EntityManager.cpp" />
