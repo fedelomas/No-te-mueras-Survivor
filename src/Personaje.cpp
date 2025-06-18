@@ -1,65 +1,64 @@
 #include "Personaje.h"
-#include <cmath>
-
+#include <SFML/Window/Keyboard.hpp>
+#include <iostream>
 
 Personaje::Personaje(sf::Texture& texture)
+    : Entity(texture)
 {
-    sprite.setTexture(texture);
-    sf::FloatRect bounds = sprite.getLocalBounds();
+    totalFrames = 4;
+    frameWidth = texture.getSize().x / totalFrames;
+    frameHeight = texture.getSize().y;
 
-    sprite.setTextureRect(sf::IntRect(currentFrame * frameWidth, 0, frameWidth, frameHeight));
+    sprite.setTextureRect(sf::IntRect(0, 0, frameWidth, frameHeight));
+    sprite.setOrigin(frameWidth / 2.f, frameHeight * 0.7f);
 
-
-    sprite.setOrigin(frameWidth / 2.f, frameHeight * 0.70f);
     sprite.setScale(1.5f, 1.5f);
-    sprite.setPosition(0.f,0.f);
+    sprite.setPosition(0.f, 0.f);
 }
 
 
-void Personaje::update(sf::RenderWindow& window, sf::View& view) {
-    Movimiento(view);
-    updateAnimation();
+void Personaje::update(float deltaTime, sf::View& view)
+{
+    mover(deltaTime, view);
+    actualizarAnimacion();
 }
 
-void Personaje::Movimiento(sf::View& view) {
+void Personaje::mover(float deltaTime, sf::View& view)
+{
     sf::Vector2f direction(0.f, 0.f);
+    sf::Vector2f pos = sprite.getPosition();
 
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::W) && sprite.getPosition().y > -470) {
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::W) && pos.y > -470)
         direction.y = -speed;
-    }
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::S) && sprite.getPosition().y < 460) {
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::S) && pos.y < 480)
         direction.y = speed;
-    }
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::D) && sprite.getPosition().x < 730) {
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::D) && pos.x < 730) {
         direction.x = speed;
         sprite.setScale(1.5f, 1.5f);
     }
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::A) && sprite.getPosition().x > -730) {
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::A) && pos.x > -730) {
         direction.x = -speed;
         sprite.setScale(-1.5f, 1.5f);
     }
 
-    sprite.move(direction);
-    view.move(direction);
+    if (direction != sf::Vector2f(0.f, 0.f)) {
+        sprite.move(direction * deltaTime * 60.f);
+        view.move(direction * deltaTime * 60.f);
+        estaMoviendo = true;
+    } else {
+        estaMoviendo = false;
+    }
 }
-
-
-void Personaje::draw(sf::RenderTarget& target, sf::RenderStates state) const
+void Personaje::actualizarAnimacion()
 {
-    target.draw(sprite,state);
-}
-
-void Personaje::updateAnimation()
-{
-    if (clock.getElapsedTime() >= frameTime)
-    {
+    if (estaMoviendo && clock.getElapsedTime() >= frameTime) {
         currentFrame = (currentFrame + 1) % totalFrames;
         sprite.setTextureRect(sf::IntRect(currentFrame * frameWidth, 0, frameWidth, frameHeight));
-
-        sprite.setOrigin(frameWidth / 2.f, frameHeight * 0.70f);
-
         clock.restart();
     }
 }
 
-
+sf::Vector2f Personaje::getPosition() const
+{
+    return sprite.getPosition();
+}

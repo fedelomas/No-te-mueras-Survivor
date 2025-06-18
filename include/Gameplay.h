@@ -1,30 +1,31 @@
 #pragma once
 #include <SFML/Graphics.hpp>
-#include <SFML/Graphics/View.hpp>
 #include "Personaje.h"
+#include "EntityManager.h"
 
-class Gameplay
-{
+class Gameplay {
 public:
     Gameplay();
+    ~Gameplay();
     void run();
-
 
 private:
     sf::RenderWindow window;
-    sf::Texture playerTexture;
-    sf::Texture mapTexture;      // Textura del fondo
-    sf::Sprite backgroundMap;     // Sprite del fondo
     sf::View view;
-    std::vector<sf::Sprite> enemigos;
-    std::vector<sf::Sprite> mapTiles;
 
-    Personaje player;
+    sf::Texture mapTexture;
+    sf::Texture playerTexture;
+    sf::Texture enemigoTexture1, enemigoTexture2, enemigoTexture3, enemigoTexture4, enemigoTexture5, enemigoTexture6;
+    sf::Texture pocionTexture;
+    sf::Texture xpTexture;
 
-    void processEvents();
-    void update();
+    sf::Sprite backgroundMap;
+
+    Personaje* personaje;
+    EntityManager entityManager;
+
+    void handleEvents();
+    void update(float deltaTime);
     void render();
 };
-
-
 
