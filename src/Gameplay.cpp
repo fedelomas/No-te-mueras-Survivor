@@ -1,64 +1,104 @@
 #include "Gameplay.h"
-#include <SFML/Graphics.hpp>
-#include "Personaje.h"
+#include <iostream>
 
-
-Gameplay::Gameplay() : window(sf::VideoMode(1000, 650), "SurvivorPrueba"), player(playerTexture)
+Gameplay::Gameplay()
+    : window(sf::VideoMode(1000, 650), "SurvivorPrueba"),
+      entityManager()
 {
     window.setFramerateLimit(60);
-
-    view.setSize(1000,650);
-    view.setCenter(0,0);
-
+    view.setSize(1000, 650);
+    view.setCenter(0, 0);
 
 
-    if (!mapTexture.loadFromFile("Assets/Mapa/Mapa.png")) {
-        throw std::runtime_error("No se pudo cargar la imagen de fondo.");
-    }
-    if (!playerTexture.loadFromFile("Assets/Player/Soldier/_Run.png")) {
-        throw std::runtime_error("No se pudo cargar la imagen de fondo.");
-    }
+    if (!mapTexture.loadFromFile("Assets/Mapa/Mapa.png"))
+        throw std::runtime_error("No se pudo cargar la imagen del mapa.");
+
+    if (!playerTexture.loadFromFile("Assets/Character/Walk3.png"))
+        throw std::runtime_error("No se pudo cargar la textura del personaje.");
+
+    if (!enemigoTexture1.loadFromFile("Assets/Enemies/1/RunSD.png"))
+        throw std::runtime_error("No se pudo cargar textura de enemigo 1");
+
+    if (!enemigoTexture2.loadFromFile("Assets/Enemies/2/RunSD.png"))
+        throw std::runtime_error("No se pudo cargar textura del enemigo 2");
+
+    if (!enemigoTexture3.loadFromFile("Assets/Enemies/3/RunSD.png"))
+        throw std::runtime_error("No se pudo cargar textura del enemigo 3");
+
+    if (!enemigoTexture4.loadFromFile("Assets/Enemies/4/RunSD.png"))
+        throw std::runtime_error("No se pudo cargar textura del enemigo 4");
+
+    if (!enemigoTexture5.loadFromFile("Assets/Enemies/5/RunSD.png"))
+        throw std::runtime_error("No se pudo cargar textura del enemigo 5");
+
+    if (!enemigoTexture6.loadFromFile("Assets/Enemies/6/RunSD.png"))
+        throw std::runtime_error("No se pudo cargar textura del enemigo 6");
+
+    if (!pocionTexture.loadFromFile("Assets/Drops/pocion.png"))
+        throw std::runtime_error("No se pudo cargar textura de pocion");
+
+    if (!xpTexture.loadFromFile("Assets/Drops/gema.png"))
+        throw std::runtime_error("No se pudo cargar textura de la gema");
+
+
+    // Spawn inicial de entidades
+    personaje = new Personaje(playerTexture);
+    std::vector<sf::Texture*> enemyTextures = {
+        &enemigoTexture1, &enemigoTexture2, &enemigoTexture3,
+        &enemigoTexture4, &enemigoTexture5, &enemigoTexture6
+        };
+
+    entityManager.setEnemyTextures(enemyTextures);
+    //entityManager.setPocionTexture(pocionTexture);
+    //entityManager.setXpTexture(xpTexture);
+
+    entityManager.spawnEnemyWave(24, personaje->getPosition(), 500.f);
+    entityManager.spawnPotion(pocionTexture, { 200.f, 0.f });
+    entityManager.spawnGema(xpTexture, { -200.f, 0.f} );
 
     backgroundMap.setTexture(mapTexture);
-    backgroundMap.setOrigin(mapTexture.getSize().x/2, mapTexture.getSize().y/2 );
-    backgroundMap.setPosition(0,0);
-
-
-
-
+    backgroundMap.setOrigin(mapTexture.getSize().x / 2.f, mapTexture.getSize().y / 2.f);
+    backgroundMap.setPosition(0.f, 0.f);
+}
+Gameplay::~Gameplay()
+{
+    delete personaje;
 }
 
-void Gameplay::run()
-{
-    while (window.isOpen())
-    {
-        processEvents();
-        update();
+void Gameplay::run() {
+    sf::Clock clock;
+
+    while (window.isOpen()) {
+        float deltaTime = clock.restart().asSeconds();
+
+        handleEvents();
+        update(deltaTime);
         render();
     }
 }
 
-void Gameplay::processEvents()
-{
+void Gameplay::handleEvents() {
     sf::Event event;
-    while (window.pollEvent(event))
-    {
+    while (window.pollEvent(event)) {
         if (event.type == sf::Event::Closed)
             window.close();
     }
 }
 
-void Gameplay::update() {
-   player.update(window, view);
+void Gameplay::update(float deltaTime) {
+    personaje->update(deltaTime, view);
+    entityManager.update(deltaTime, view);
 }
 
 void Gameplay::render() {
-    window.clear(sf::Color::White);
+    window.clear();
+
     window.setView(view);
     window.draw(backgroundMap);
-    window.draw(player);
+    window.draw(*personaje);
+    entityManager.render(window);
+
     window.display();
 }
-
 
 
