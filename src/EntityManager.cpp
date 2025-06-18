@@ -1,5 +1,6 @@
 #include "EntityManager.h"
 #include "Enemigo.h"
+#include "Boss.h"
 #include "PocionDeVida.h"
 #include "GemaDeExperiencia.h"
 #include <cmath>
@@ -41,8 +42,8 @@ void EntityManager::removeDead() {
     }
 }
 
-void EntityManager::spawnEnemy(sf::Texture& texture, sf::Vector2f posicion) {
-    add(new Enemigo(texture, posicion));
+void EntityManager::spawnBoss(sf::Texture& texture, sf::Vector2f posicion) {
+    add(new Boss(texture, posicion));
 }
 
 void EntityManager::spawnPotion(sf::Texture& texture, sf::Vector2f posicion) {
@@ -55,6 +56,10 @@ void EntityManager::spawnGema(sf::Texture& texture, sf::Vector2f posicion) {
 
 void EntityManager::setEnemyTextures(const std::vector<sf::Texture*>& textures) {
     enemyTextures = textures;
+}
+
+void EntityManager::setBossTexture(sf::Texture& texture) {
+    bossTexture = &texture;
 }
 
 void EntityManager::setPocionTexture(sf::Texture& texture) {
@@ -80,11 +85,11 @@ void EntityManager::spawnEnemyWave(int cantidadTotal, sf::Vector2f zonaCentro, f
 
             float angle = static_cast<float>(rand()) / RAND_MAX * 2 * 3.14159f;
             float distance = static_cast<float>(rand()) / RAND_MAX * radio;
-            sf::Vector2f offset(std::cos(angle) * distance + 2, std::sin(angle) * distance + 2);
+            sf::Vector2f offset(std::cos(angle) * distance, std::sin(angle) * distance);
             sf::Vector2f posicion = zonaCentro + offset;
 
             sf::Texture* texture = enemyTextures[tipo];
-            float velocidad = 50.f + rand() % 50;
+            float velocidad = 0.f;
             float escala = 1.5f;
 
             switch (tipo){

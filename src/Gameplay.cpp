@@ -34,6 +34,9 @@ Gameplay::Gameplay()
     if (!enemigoTexture6.loadFromFile("Assets/Enemies/6/RunSD.png"))
         throw std::runtime_error("No se pudo cargar textura del enemigo 6");
 
+    if (!bossTexture.loadFromFile("Assets/Enemies/Bosses/green-monster.png"))
+        throw std::runtime_error("No se pudo cargar textura del boss");
+
     if (!pocionTexture.loadFromFile("Assets/Drops/pocion.png"))
         throw std::runtime_error("No se pudo cargar textura de pocion");
 
@@ -52,7 +55,8 @@ Gameplay::Gameplay()
     //entityManager.setPocionTexture(pocionTexture);
     //entityManager.setXpTexture(xpTexture);
 
-    entityManager.spawnEnemyWave(24, personaje->getPosition(), 500.f);
+    entityManager.spawnEnemyWave(24, personaje->getPosition(), 1000.f);
+    entityManager.spawnBoss(bossTexture,{ 700.f, 0.f});
     entityManager.spawnPotion(pocionTexture, { 200.f, 0.f });
     entityManager.spawnGema(xpTexture, { -200.f, 0.f} );
 
