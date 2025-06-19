@@ -432,10 +432,10 @@
 	"Gameplay.h"
 	"Menu.h"
 
-1749566839 d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\include\gameplay.h
+1750355615 d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\include\gameplay.h
 	<SFML/Graphics.hpp>
-	<SFML/Graphics/View.hpp>
 	"Personaje.h"
+	"EntityManager.h"
 
 1525812018 d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\sfml\include\sfml\graphics.hpp
 	<SFML/Window.hpp>
@@ -846,18 +846,17 @@
 	<SFML/Graphics/Drawable.hpp>
 	<SFML/Window/GlResource.hpp>
 
-1749248041 d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\include\personaje.h
-	<SFML/Graphics.hpp>
-	<SFML/System/Vector2.hpp>
+1750355455 d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\include\personaje.h
+	"Entity.h"
 
-1749566839 source:d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\src\gameplay.cpp
+1750355615 source:d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\src\gameplay.cpp
 	"Gameplay.h"
-	<SFML/Graphics.hpp>
-	"Personaje.h"
+	<iostream>
 
-1749249099 source:d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\src\personaje.cpp
+1750355455 source:d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\src\personaje.cpp
 	"Personaje.h"
-	<cmath>
+	<SFML/Window/Keyboard.hpp>
+	<iostream>
 
 1750166239 source:d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\src\menu.cpp
 	"Menu.h"
@@ -978,4 +977,50 @@
 1750163143 source:d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\src\soundmanager.cpp
 	"SoundManager.h"
 	<stdexcept>
+
+1750355455 d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\include\entity.h
+	<SFML/Graphics.hpp>
+
+1750355615 d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\include\entitymanager.h
+	<vector>
+	"Entity.h"
+	<SFML/Graphics.hpp>
+
+1750355615 source:d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\src\enemigo.cpp
+	"Enemigo.h"
+	<cmath>
+
+1750355615 d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\include\enemigo.h
+	"Entity.h"
+
+1750355455 source:d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\src\entity.cpp
+	"Entity.h"
+
+1750355615 source:d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\src\entitymanager.cpp
+	"EntityManager.h"
+	"Enemigo.h"
+	"PocionDeVida.h"
+	"GemaDeExperiencia.h"
+	<cmath>
+
+1750355455 d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\include\pociondevida.h
+	"Entity.h"
+
+1750355455 d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\include\gemadeexperiencia.h
+	"Entity.h"
+
+1750355455 source:d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\src\gemadeexperiencia.cpp
+	"GemaDeExperiencia.h"
+	<cmath>
+
+1750355455 source:d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\src\pociondevida.cpp
+	"PocionDeVida.h"
+	<cmath>
+
+1750356411 source:d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\src\boss.cpp
+	"Boss.h"
+	<cmath>
+
+1750356411 d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\include\boss.h
+	"Entity.h"
 
