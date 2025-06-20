@@ -428,14 +428,19 @@
 	<SFML/Graphics.hpp>
 	"Personaje.h"
 
-1749863797 source:d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\main.cpp
-	"Gameplay.h"
+1750383273 source:d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\main.cpp
+	<SFML/Graphics.hpp>
+	<memory>
 	"Menu.h"
+	"Gameplay.h"
+	"SoundManager.h"
 
-1750355615 d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\include\gameplay.h
+1750383273 d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\include\gameplay.h
 	<SFML/Graphics.hpp>
 	"Personaje.h"
 	"EntityManager.h"
+	"PauseMenu.h"
+	"SoundManager.h"
 
 1525812018 d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\sfml\include\sfml\graphics.hpp
 	<SFML/Window.hpp>
@@ -849,7 +854,7 @@
 1750355455 d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\include\personaje.h
 	"Entity.h"
 
-1750355615 source:d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\src\gameplay.cpp
+1750383273 source:d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\src\gameplay.cpp
 	"Gameplay.h"
 	<iostream>
 
@@ -858,15 +863,15 @@
 	<SFML/Window/Keyboard.hpp>
 	<iostream>
 
-1750166239 source:d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\src\menu.cpp
+1750384570 source:d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\src\menu.cpp
 	"Menu.h"
 	"SoundManager.h"
 
-1750162805 d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\include\menu.h
+1750384404 d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\include\menu.h
 	<SFML/Graphics.hpp>
 	"SoundManager.h"
 
-1750162980 d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\include\soundmanager.h
+1750380744 d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\include\soundmanager.h
 	<SFML/Audio.hpp>
 	<string>
 
@@ -974,7 +979,7 @@
 	<SFML/Audio/Export.hpp>
 	<string>
 
-1750163143 source:d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\src\soundmanager.cpp
+1750383058 source:d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\src\soundmanager.cpp
 	"SoundManager.h"
 	<stdexcept>
 
@@ -1023,4 +1028,13 @@
 
 1750356411 d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\include\boss.h
 	"Entity.h"
+
+1750382974 source:d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\src\pausemenu.cpp
+	"PauseMenu.h"
+	<stdexcept>
+	"iostream"
+
+1750382974 d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\include\pausemenu.h
+	<SFML/Graphics.hpp>
+	"SoundManager.h"
 

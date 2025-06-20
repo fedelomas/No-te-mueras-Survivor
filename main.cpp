@@ -1,26 +1,35 @@
-#include "Gameplay.h"
+#include <SFML/Graphics.hpp>
+#include <memory>
 #include "Menu.h"
+#include "Gameplay.h"
+#include "SoundManager.h"
 
-int main() {
-    sf::RenderWindow window(sf::VideoMode(1000, 650), "Survivor - Menú");
+int main()
+{
+    int estado = 0;
+    bool hayPartidaEnPausa = false;
+    std::unique_ptr<Gameplay> partidaGuardada;
+    SoundManager soundManager;
 
-    while (window.isOpen()) {
-        Menu menu(window);
-        int selection = menu.run();  //  Espera la opción del menú
+    while (estado != -1)
+    {
+        if (estado == 0)
+        {
+            sf::RenderWindow window(sf::VideoMode(1000, 650), "Survivor - Menú");
+            Menu menu(window, soundManager, hayPartidaEnPausa);
+            estado = menu.run();  // 1 = nueva partida, 2 = continuar, -1 = salir
+        }
 
-        if (selection == 0) {  // "Play"
-            Gameplay game;
-            game.run();  // Inicia el juego
-            break;
-        } else if (selection == 4) {  // "Options"
-            Menu optionsMenu(window);  // Cargar menú de opciones
-            int optionsSelection = optionsMenu.run();  // Ejecutar menú de opciones
+        if (estado == 1)
+        {
+            partidaGuardada = std::make_unique<Gameplay>(soundManager);
+            estado = partidaGuardada->run();
+            hayPartidaEnPausa = true;
+        }
 
-            if (optionsSelection == 2) {  // "Back" en opciones
-                continue;  // Volver al menú principal
-            }
-        } else if (selection == -1) {  // "Exit"
-            window.close();  // Cierra la aplicación
+        if (estado == 2 && partidaGuardada)
+        {
+            estado = partidaGuardada->run();
         }
     }
 

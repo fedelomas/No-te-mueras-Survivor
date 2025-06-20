@@ -2,12 +2,15 @@
 #include <SFML/Graphics.hpp>
 #include "Personaje.h"
 #include "EntityManager.h"
+#include "PauseMenu.h"
+#include "SoundManager.h"
+
 
 class Gameplay {
 public:
-    Gameplay();
+    Gameplay(SoundManager& soundManager);
     ~Gameplay();
-    void run();
+    int run();
 
 private:
     sf::RenderWindow window;
@@ -23,6 +26,8 @@ private:
 
     Personaje* personaje;
     EntityManager entityManager;
+    PauseMenu pauseMenu;
+    SoundManager& soundManager;
 
     void handleEvents();
     void update(float deltaTime);

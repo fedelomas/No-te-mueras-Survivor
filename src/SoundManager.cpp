@@ -1,6 +1,7 @@
 #include "SoundManager.h"
 #include <stdexcept>
 
+
 SoundManager::SoundManager() {
     // Música del menú
     if (!menuMusic.openFromFile("Assets/Sound-Music/Music/mix2.ogg")) {
@@ -20,10 +21,16 @@ SoundManager::SoundManager() {
         throw std::runtime_error("No se pudo cargar selectMove.wav.");
     }
     navigateSound.setBuffer(navigateBuffer);
+    if (!gameplayMusic.openFromFile("Assets/Sound-Music/Music/musica2.ogg")) {
+    throw std::runtime_error("No se pudo cargar la música del juego.");
+    }
+    gameplayMusic.setLoop(true);
 }
 
 void SoundManager::playMenuMusic() {
-    menuMusic.play();
+    if (menuMusic.getStatus() != sf::Music::Playing) {
+        menuMusic.play();
+    }
 }
 
 void SoundManager::stopMenuMusic() {
@@ -43,4 +50,35 @@ void SoundManager::playSoundEffect(const std::string& soundName) {
 void SoundManager::setSoundEffectsEnabled(bool enabled) {
     soundEffectsEnabled = enabled;  // Cambia el estado de los efectos de sonido
 }
+
+void SoundManager::setMenuMusicEnabled(bool enabled) {
+    if (enabled) {
+        if (menuMusic.getStatus() != sf::SoundSource::Playing)
+            menuMusic.play();
+    } else {
+        if (menuMusic.getStatus() == sf::SoundSource::Playing)
+            menuMusic.stop();
+    }
+}
+
+void SoundManager::playGameplayMusic() {
+    if (gameplayMusic.getStatus() != sf::Music::Playing)
+        gameplayMusic.play();
+}
+
+void SoundManager::stopGameplayMusic() {
+    if (gameplayMusic.getStatus() != sf::Music::Stopped)
+        gameplayMusic.stop();
+}
+
+void SoundManager::setGameplayMusicEnabled(bool enabled) {
+    if (enabled) {
+        if (gameplayMusic.getStatus() != sf::Music::Playing)
+            gameplayMusic.play();
+    } else {
+        if (gameplayMusic.getStatus() == sf::Music::Playing)
+            gameplayMusic.pause();
+    }
+}
+
 
