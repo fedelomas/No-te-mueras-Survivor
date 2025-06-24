@@ -23,7 +23,14 @@ void Enemigo::update(float deltaTime, sf::View& view) {
     if (length != 0)
         direction /= length;
 
+    if (direction.x < 0)
+        sprite.setScale(-std::abs(sprite.getScale().x), sprite.getScale().y);
+    else
+        sprite.setScale(std::abs(sprite.getScale().x), sprite.getScale().y);
+
     sprite.move(direction * speed * deltaTime);
+
+
     actualizarAnimacion();
 }
 

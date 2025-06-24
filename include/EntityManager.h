@@ -18,6 +18,7 @@ private:
     std::vector<sf::Texture*> enemyTextures;
     sf::Texture* xpTexture = nullptr;
     sf::Texture* pocionTexture = nullptr;
+    sf::Texture* bossTexture = nullptr;
 
 public:
     EntityManager(){};
@@ -28,13 +29,14 @@ public:
     void add(Entity* entity);
     void removeDead();
 
-    void spawnEnemy(sf::Texture& texture, sf::Vector2f posicion);
+    void spawnBoss(sf::Texture& texture, sf::Vector2f posicion);
     void spawnEnemyWave(int cantidadTotal, sf::Vector2f zonaCentro, float radio);
 
     void spawnPotion(sf::Texture& texture, sf::Vector2f posicion);
     void spawnGema(sf::Texture& texture, sf::Vector2f posicion);
 
     void setEnemyTextures(const std::vector<sf::Texture*>& textures);
+    void setBossTexture(sf::Texture& texture);
     void setPocionTexture(sf::Texture& texture);
     void setXpTexture(sf::Texture& texture);
 };

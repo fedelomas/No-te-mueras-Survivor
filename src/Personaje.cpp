@@ -23,7 +23,7 @@ void Personaje::update(float deltaTime, sf::View& view)
     actualizarAnimacion();
 }
 
-void Personaje::mover(float deltaTime, sf::View& view)
+/*void Personaje::mover(float deltaTime, sf::View& view)
 {
     sf::Vector2f direction(0.f, 0.f);
     sf::Vector2f pos = sprite.getPosition();
@@ -48,7 +48,35 @@ void Personaje::mover(float deltaTime, sf::View& view)
     } else {
         estaMoviendo = false;
     }
+} */
+
+
+void Personaje::mover(float deltaTime, sf::View& view)
+{
+    sf::Vector2f direction(0.f, 0.f);
+
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
+        direction.y = -speed;
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
+        direction.y = speed;
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
+        direction.x = speed;
+        sprite.setScale(1.5f, 1.5f);
+    }
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
+        direction.x = -speed;
+        sprite.setScale(-1.5f, 1.5f);
+    }
+
+    if (direction != sf::Vector2f(0.f, 0.f)) {
+        sprite.move(direction * deltaTime * 60.f);
+        view.move(direction * deltaTime * 60.f);
+        estaMoviendo = true;
+    } else {
+        estaMoviendo = false;
+    }
 }
+
 void Personaje::actualizarAnimacion()
 {
     if (estaMoviendo && clock.getElapsedTime() >= frameTime) {
