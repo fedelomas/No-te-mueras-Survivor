@@ -19,11 +19,12 @@ Personaje::Personaje(sf::Texture& playerTexture, sf::Texture& deathTexture)
 }
 
 void Personaje::update(float deltaTime, sf::View& view) {
+    if ((estaRecibiendoDanio || estaSiendoCurado) && flashClock.getElapsedTime().asMilliseconds() > 150) {
+        sprite.setColor(sf::Color::White);
+        estaRecibiendoDanio = false;
+        estaSiendoCurado = false;
+    }
 
-    if (estaRecibiendoDanio && flashClock.getElapsedTime().asMilliseconds() > 150) {
-    sprite.setColor(sf::Color::White);
-    estaRecibiendoDanio = false;
-}
     if (muerto) {
         reproducirAnimacionMuerte(deltaTime);
         return;
@@ -99,7 +100,9 @@ void Personaje::curar(int cantidad) {
     vida += cantidad;
     if (vida > 100) vida = 100;
 
-    //std::cout << "El personaje se ha curado " << cantidad << " puntos. Vida actual: " << vida << "\n";
+    sprite.setColor(sf::Color::Green);
+    estaSiendoCurado = true;
+    flashClock.restart();
 }
 
 void Personaje::ganarXP(int cantidad) {

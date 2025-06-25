@@ -35,3 +35,11 @@ void Entity::setPosition(const sf::Vector2f& pos) {
 sf::FloatRect Entity::getBounds() const {
     return sprite.getGlobalBounds();
 }
+sf::FloatRect Entity::getHitbox() const {
+    sf::FloatRect bounds = sprite.getGlobalBounds();
+    float offsetX = bounds.width * 0.1f;
+    float offsetY = bounds.height * 0.15f;
+    float width = bounds.width * 0.8f;
+    float height = bounds.height * 0.7f;
+    return {bounds.left + offsetX, bounds.top + offsetY, width, height};
+}

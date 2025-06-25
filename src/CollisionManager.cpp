@@ -7,8 +7,8 @@ void CollisionManager::checkCollisions() {
     for (std::size_t i = 0; i < entities.size(); ++i) {
         Entity* entidad = entities[i];
 
-        if (entidad->getBounds().intersects(personaje->getBounds())){
-        //if (entidad->getHitbox().intersects(personaje->getHitbox())){
+        //if (entidad->getBounds().intersects(personaje->getBounds())){
+        if (entidad->getHitbox().intersects(personaje->getHitbox())){
 
             // Pocion de vida
             if (dynamic_cast<PocionDeVida*>(entidad)) {
@@ -28,7 +28,7 @@ void CollisionManager::checkCollisions() {
                 if (enemigo) {
                     if (enemigo->clockAtaque.getElapsedTime().asSeconds() >= enemigo->intervaloAtaque) {
                         std::cout << "[Collision] Enemigo tocado!" << std::endl;
-                        personaje->recibirDanio(50);
+                        personaje->recibirDanio(10);
                         enemigo->clockAtaque.restart();
             }
                 }
