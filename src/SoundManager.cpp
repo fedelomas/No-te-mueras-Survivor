@@ -1,29 +1,36 @@
 #include "SoundManager.h"
 #include <stdexcept>
 
+
 SoundManager::SoundManager() {
-    // Música del menú
+    // Mï¿½sica del menï¿½
     if (!menuMusic.openFromFile("Assets/Sound-Music/Music/mix2.ogg")) {
-        throw std::runtime_error("No se pudo cargar la música del menú.");
+        throw std::runtime_error("No se pudo cargar la mï¿½sica del menï¿½.");
     }
     menuMusic.setLoop(true);
 
-    // Sonido de selección (Enter)
+    // Sonido de selecciï¿½n (Enter)
     if (!buttonClickBuffer.loadFromFile("Assets/Sound-Music/Sounds/select.wav")) {
         throw std::runtime_error("No se pudo cargar select.wav.");
     }
     buttonClick.setBuffer(buttonClickBuffer);
-    selectSound = buttonClick;  //  opcional si querés compartirlo
+    selectSound = buttonClick;  //  opcional si querï¿½s compartirlo
 
-    // Sonido de navegación (W/S)
+    // Sonido de navegaciï¿½n (W/S)
     if (!navigateBuffer.loadFromFile("Assets/Sound-Music/Sounds/selectMove.wav")) {
         throw std::runtime_error("No se pudo cargar selectMove.wav.");
     }
     navigateSound.setBuffer(navigateBuffer);
+    if (!gameplayMusic.openFromFile("Assets/Sound-Music/Music/musica2.ogg")) {
+    throw std::runtime_error("No se pudo cargar la mï¿½sica del juego.");
+    }
+    gameplayMusic.setLoop(true);
 }
 
 void SoundManager::playMenuMusic() {
-    menuMusic.play();
+    if (menuMusic.getStatus() != sf::Music::Playing) {
+        menuMusic.play();
+    }
 }
 
 void SoundManager::stopMenuMusic() {
@@ -31,7 +38,7 @@ void SoundManager::stopMenuMusic() {
 }
 
 void SoundManager::playSoundEffect(const std::string& soundName) {
-    if (!soundEffectsEnabled) return;  // Evita reproducir sonidos si están desactivados
+    if (!soundEffectsEnabled) return;  // Evita reproducir sonidos si estï¿½n desactivados
 
     if (soundName == "navigate") {
         navigateSound.play();
@@ -44,3 +51,32 @@ void SoundManager::setSoundEffectsEnabled(bool enabled) {
     soundEffectsEnabled = enabled;  // Cambia el estado de los efectos de sonido
 }
 
+void SoundManager::setMenuMusicEnabled(bool enabled) {
+    if (enabled) {
+        if (menuMusic.getStatus() != sf::SoundSource::Playing)
+            menuMusic.play();
+    } else {
+        if (menuMusic.getStatus() == sf::SoundSource::Playing)
+            menuMusic.stop();
+    }
+}
+
+void SoundManager::playGameplayMusic() {
+    if (gameplayMusic.getStatus() != sf::Music::Playing)
+        gameplayMusic.play();
+}
+
+void SoundManager::stopGameplayMusic() {
+    if (gameplayMusic.getStatus() != sf::Music::Stopped)
+        gameplayMusic.stop();
+}
+
+void SoundManager::setGameplayMusicEnabled(bool enabled) {
+    if (enabled) {
+        if (gameplayMusic.getStatus() != sf::Music::Playing)
+            gameplayMusic.play();
+    } else {
+        if (gameplayMusic.getStatus() == sf::Music::Playing)
+            gameplayMusic.pause();
+    }
+}

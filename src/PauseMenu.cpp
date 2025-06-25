@@ -6,8 +6,6 @@ using namespace std;
 
 PauseMenu::PauseMenu(sf::RenderWindow& win, SoundManager& sm): window(win), soundManager(sm), menuOpen(false), soundOn(true), musicOn(true)
 {
-
-
     if (!hudTexture.loadFromFile("Assets/Menus/MenuIcons/IconsButtons.png"))
         throw std::runtime_error("No se pudo cargar IconsButtons.png");
     if (!menuPrincipalTexture.loadFromFile("Assets/Menus/MenuIcons/IconsButtons2.png"))
@@ -15,12 +13,12 @@ PauseMenu::PauseMenu(sf::RenderWindow& win, SoundManager& sm): window(win), soun
 
     btnMainMenu.setTexture(menuPrincipalTexture);
     btnMainMenu.setTextureRect(sf::IntRect(0, 0, 1920, 1920));
-    btnMainMenu.setScale(0.07f, 0.07f); // Escalado a proporción similar a los otros íconos
+    btnMainMenu.setScale(0.07f, 0.07f); // Escalado a proporciï¿½n similar a los otros ï¿½conos
 
     iconW = 631 / 4;
     iconH = 395 / 2;
 
-// Íconos por posición (columna x fila) — con ajustes personalizados
+// ï¿½conos por posiciï¿½n (columna x fila) ï¿½ con ajustes personalizados
     sonidoOnRect    = {0 * iconW -10, 0 * iconH + 1, iconW -15, iconH - 2}; // margen ajustado
     sonidoOffRect   = {0 * iconW -10, 1 * iconH -10, iconW -15, iconH + 5};
 
@@ -41,7 +39,7 @@ PauseMenu::PauseMenu(sf::RenderWindow& win, SoundManager& sm): window(win), soun
 
     updateIcons();
 
-    // Posicionar el botón hamburguesa arriba a la derecha
+    // Posicionar el botï¿½n hamburguesa arriba a la derecha
     btnMenu.setPosition(window.getSize().x - iconW - 20.f, 20.f);
 }
 
@@ -82,7 +80,7 @@ void PauseMenu::processEvent(const sf::Event& event)
         else if (menuOpen && btnMusic.getGlobalBounds().contains(mouse))
         {
             musicOn = !musicOn;
-            std::cout << "Clic en botón de música. Nuevo estado: " << musicOn << std::endl;
+            std::cout << "Clic en botï¿½n de mï¿½sica. Nuevo estado: " << musicOn << std::endl;
             soundManager.setGameplayMusicEnabled(musicOn);
             soundManager.playSoundEffect("select");
             updateIcons();
@@ -108,36 +106,36 @@ void PauseMenu::render()
     sf::View originalView = window.getView();
     window.setView(window.getDefaultView());
 
-    // Dibujar menú hamburguesa (siempre visible)
+    // Dibujar menï¿½ hamburguesa (siempre visible)
     window.draw(btnMenu);
 
     if (menuOpen)
     {
-        const float spacing = iconW * 0.6f;  // espacio horizontal entre íconos
+        const float spacing = iconW * 0.6f;  // espacio horizontal entre ï¿½conos
         const float totalWidth = 3 * iconW * 0.7f + 2 * spacing;
         const float startX = (window.getSize().x - totalWidth) / 2.f;
         const float posY = window.getSize().y / 2.f - iconH * 0.35f;
 
-        // Fondo común
+        // Fondo comï¿½n
         sf::RectangleShape bg;
         bg.setSize(sf::Vector2f(iconW * 0.7f, iconH * 0.7f));
         bg.setFillColor(sf::Color(0, 0, 0, 0));
 
-        // Botón Sonido
+        // Botï¿½n Sonido
         btnSound.setScale(0.7f, 0.7f);
         btnSound.setPosition(startX + 0 * (iconW * 0.7f + spacing), posY);
         bg.setPosition(btnSound.getPosition());
         window.draw(bg);
         window.draw(btnSound);
 
-        // Botón Música
+        // Botï¿½n Mï¿½sica
         btnMusic.setScale(0.7f, 0.7f);
         btnMusic.setPosition(startX + 1 * (iconW * 0.7f + spacing), posY);
         bg.setPosition(btnMusic.getPosition());
         window.draw(bg);
         window.draw(btnMusic);
 
-        // Botón Pausa
+        // Botï¿½n Pausa
         btnMainMenu.setPosition(startX + 2 * (iconW * 0.7f + spacing), posY);
         bg.setPosition(btnMainMenu.getPosition());
         window.draw(bg);
@@ -161,7 +159,8 @@ bool PauseMenu::isSoundEnabled() const
     return soundOn;
 }
 
-bool PauseMenu::shouldReturnToMainMenu() const {
+bool PauseMenu::shouldReturnToMainMenu() const
+{
     return returnToMainMenu;
 }
 
