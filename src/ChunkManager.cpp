@@ -16,7 +16,7 @@ void ChunkManager::updateChunksAround(const sf::Vector2f& playerPos) {
     int currentChunkX = static_cast<int>(std::floor(playerPos.x / (tileSize * tilesPerChunk)));
     int currentChunkY = static_cast<int>(std::floor(playerPos.y / (tileSize * tilesPerChunk)));
 
-    int radius = 3;
+    int radius = 1;
     for (int dy = -radius; dy <= radius; ++dy) {
         for (int dx = -radius; dx <= radius; ++dx) {
             int cx = currentChunkX + dx;
@@ -71,4 +71,3 @@ void ChunkManager::draw(sf::RenderTarget& target, sf::RenderStates states) const
         target.draw(pair.second, states);
     }
 }
-

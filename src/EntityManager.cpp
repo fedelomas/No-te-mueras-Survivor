@@ -58,18 +58,6 @@ void EntityManager::setEnemyTextures(const std::vector<sf::Texture*>& textures) 
     enemyTextures = textures;
 }
 
-void EntityManager::setBossTexture(sf::Texture& texture) {
-    bossTexture = &texture;
-}
-
-void EntityManager::setPocionTexture(sf::Texture& texture) {
-    pocionTexture = &texture;
-}
-
-void EntityManager::setXpTexture(sf::Texture& texture) {
-    xpTexture = &texture;
-}
-
 void EntityManager::spawnEnemyWave(int cantidadTotal, sf::Vector2f zonaCentro, float radio) {
     if (enemyTextures.empty() || cantidadTotal <= 0)
         return;

@@ -43,3 +43,10 @@ void Enemigo::actualizarAnimacion()
         clock.restart();
     }
 }
+
+/*sf::FloatRect Enemigo::getHitbox() const {
+    sf::Vector2f pos = sprite.getPosition();
+    sf::Vector2f scale = sprite.getScale();
+    float w = frameWidth * 0.4f * std::abs(scale.x);
+    float h = frameHeight * 0.5f * scale.y;
+}*/
