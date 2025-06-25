@@ -2,12 +2,17 @@
 #include <iostream>
 
 Gameplay::Gameplay(sf::RenderWindow& win, SoundManager& soundManager)
+<<<<<<< Updated upstream
     : window(sf::VideoMode(1000, 650), "SurvivorPrueba"),
+=======
+    : window(win),
+>>>>>>> Stashed changes
       soundManager(soundManager),
       chunkManager(32, 64),
       pauseMenu(window, soundManager),
       entityManager()
 {
+    std::cout << ">> Iniciando constructor de Gameplay\n";
     window.setFramerateLimit(60);
     //view.setSize(1000, 650);
     view.setSize(static_cast<float>(window.getSize().x), static_cast<float>(window.getSize().y));
@@ -75,6 +80,7 @@ Gameplay::Gameplay(sf::RenderWindow& win, SoundManager& soundManager)
     entityManager.spawnBoss(bossTexture,{ 700.f, 0.f});
     entityManager.spawnPotion(pocionTexture, { 200.f, 0.f });
     entityManager.spawnGema(xpTexture, { -200.f, 0.f} );
+<<<<<<< Updated upstream
 
    // backgroundMap.setTexture(mapTexture);
    // backgroundMap.setOrigin(mapTexture.getSize().x / 2.f, mapTexture.getSize().y / 2.f);
@@ -101,8 +107,41 @@ Gameplay::Gameplay(sf::RenderWindow& win, SoundManager& soundManager)
     salirText.setOrigin(boundsSalir.width / 2.f, boundsSalir.height / 2.f);
     salirText.setPosition(window.getSize().x / 2.f, window.getSize().y / 2.f + 40.f);
 
+=======
 
+   // backgroundMap.setTexture(mapTexture);
+   // backgroundMap.setOrigin(mapTexture.getSize().x / 2.f, mapTexture.getSize().y / 2.f);
+   // backgroundMap.setPosition(0.f, 0.f);
+>>>>>>> Stashed changes
+
+    hud = new HUD(personaje);
+
+
+    gameOverText.setFont(hudFont);
+    gameOverText.setString("GAME OVER");
+    gameOverText.setCharacterSize(80);
+    gameOverText.setFillColor(sf::Color::White);
+    gameOverText.setOutlineColor(sf::Color::Black);
+    gameOverText.setOutlineThickness(4.f);
+    sf::FloatRect boundsGO = gameOverText.getLocalBounds();
+    gameOverText.setOrigin(boundsGO.width / 2.f, boundsGO.height / 2.f);
+    gameOverText.setPosition(window.getSize().x / 2.f, window.getSize().y / 2.f - 40.f);
+
+    salirText.setFont(hudFont);
+    salirText.setString("ESC para salir");
+    salirText.setCharacterSize(24);
+    salirText.setFillColor(sf::Color::White);
+    sf::FloatRect boundsSalir = salirText.getLocalBounds();
+    salirText.setOrigin(boundsSalir.width / 2.f, boundsSalir.height / 2.f);
+    salirText.setPosition(window.getSize().x / 2.f, window.getSize().y / 2.f + 40.f);
+
+    std::cout << ">> Constructor completado\n";
 }
+<<<<<<< Updated upstream
+=======
+
+
+>>>>>>> Stashed changes
 Gameplay::~Gameplay()
 {
     delete personaje;
@@ -115,6 +154,7 @@ Gameplay::~Gameplay()
 void Gameplay::run() {
     sf::Clock clock;
 
+<<<<<<< Updated upstream
     while (window.isOpen()) {
         float deltaTime = clock.restart().asSeconds();
 
@@ -124,6 +164,8 @@ void Gameplay::run() {
     }
 }
 */
+=======
+>>>>>>> Stashed changes
 int Gameplay::run() {
     sf::Clock clock;
     pauseMenu.resetReturnToMainMenu();
@@ -131,6 +173,11 @@ int Gameplay::run() {
     soundManager.setMenuMusicEnabled(false);
     soundManager.setGameplayMusicEnabled(true);
 
+<<<<<<< Updated upstream
+=======
+    window.setView(view);  // Aseguramos que se use la vista del juego
+
+>>>>>>> Stashed changes
     while (window.isOpen()) {
         if (pauseMenu.shouldReturnToMainMenu()) {
             soundManager.setGameplayMusicEnabled(false);
