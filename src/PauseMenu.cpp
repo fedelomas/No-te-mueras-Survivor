@@ -6,6 +6,8 @@ using namespace std;
 
 PauseMenu::PauseMenu(sf::RenderWindow& win, SoundManager& sm): window(win), soundManager(sm), menuOpen(false), soundOn(true), musicOn(true)
 {
+
+
     if (!hudTexture.loadFromFile("Assets/Menus/MenuIcons/IconsButtons.png"))
         throw std::runtime_error("No se pudo cargar IconsButtons.png");
     if (!menuPrincipalTexture.loadFromFile("Assets/Menus/MenuIcons/IconsButtons2.png"))

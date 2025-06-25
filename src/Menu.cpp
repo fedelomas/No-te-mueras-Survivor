@@ -10,7 +10,6 @@ Menu::Menu(sf::RenderWindow& window, SoundManager& soundManager, bool hayPartida
     {
         throw std::runtime_error("No se pudieron cargar las imágenes.");
     }
-
     // Iniciar música del menú
     soundManager.setGameplayMusicEnabled(false);   // Detener música del gameplay
     soundManager.setMenuMusicEnabled(true);        // Reproducir música del menú
@@ -24,7 +23,6 @@ Menu::Menu(sf::RenderWindow& window, SoundManager& soundManager, bool hayPartida
     {
         buttons[i].setTexture(buttonTexture1);
     }
-
     buttons[4].setTextureRect(sf::IntRect(buttonWidth * 1 + 15, buttonHeight * 0, buttonWidth - 7, buttonHeight));  // "Exit"
 
     // Inicializar botones del menú de opciones
@@ -32,7 +30,6 @@ Menu::Menu(sf::RenderWindow& window, SoundManager& soundManager, bool hayPartida
     {
         optionButtons[i].setTexture(buttonTexture1);
     }
-
     // Centrar cada botón correctamente en la pantalla
     float spacing = buttonHeight * 0.8;
     for (int i = 0; i < 5; i++)
@@ -148,8 +145,8 @@ int Menu::run()
 
     }
 
-    return estadoFinal;
 
+    return estadoFinal;
 }
 
 void Menu::updateSelection()
@@ -193,12 +190,12 @@ void Menu::render()
     window.display();
 }
 
-
 void Menu::loadOptionsMenu()
 {
     menuState = OPTIONS_MENU;
     int buttonWidth = 1007 / 5;
     int buttonHeight = 248 / 2;
+
 
     optionButtons[2].setTexture(buttonTexture1);
     optionButtons[2].setTextureRect(sf::IntRect(buttonWidth * 2 + 9, buttonHeight * 1, buttonWidth - 15, buttonHeight));  // "Back"
@@ -211,6 +208,8 @@ void Menu::loadOptionsMenu()
         float offsetX = (i == 0) ? -30.f : 0.f;
 
         optionButtons[i].setPosition(window.getSize().x / 2 + offsetX, window.getSize().y / 2 - spacing + i * spacing);
+
+
 
 
         optionButtons[i].setScale(1.f, 1.f);  // Asegurar que estén visibles
@@ -231,6 +230,8 @@ void Menu::loadMainMenu()
 
     // Restaurar recortes de los botones del menú principal
     buttons[0].setTextureRect(sf::IntRect(buttonWidth * 1 + 17, buttonHeight * 1, buttonWidth - 13, buttonHeight)); // "Play"
+
+
     buttons[3].setTextureRect(sf::IntRect(buttonWidth * 3, buttonHeight * 1, buttonWidth - 11, buttonHeight));      // "Options"
     buttons[4].setTextureRect(sf::IntRect(buttonWidth * 1 + 15, buttonHeight * 0, buttonWidth - 7, buttonHeight));  // "Exit"
 

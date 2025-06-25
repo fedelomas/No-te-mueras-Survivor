@@ -11,12 +11,15 @@ public:
     ~Gameplay();
     int run();
 
+
 private:
     void handleEvents();
     void update(float deltaTime);
     void render();
 
     sf::RenderWindow window;
+
+
     sf::View view;
 
     sf::Texture mapTexture;
@@ -27,7 +30,6 @@ private:
     sf::Texture xpTexture;
     sf::Texture armaTexture;
     sf::Texture proyectilTexture;
-
     sf::Sprite backgroundMap;
 
     Personaje* personaje;

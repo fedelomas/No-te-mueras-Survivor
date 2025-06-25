@@ -428,36 +428,58 @@
 	<SFML/Graphics.hpp>
 	"Personaje.h"
 
-1750823063 source:d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\main.cpp
-	<SFML/Graphics.hpp>
-	<memory>
-	"Menu.h"
-	"Gameplay.h"
-	"SoundManager.h"
-
-1750660208 ated upstream
+1750825421 ated upstream
 	"EntityManager.h"
 	"PauseMenu.h"
 	"SoundManager.h"
 	"Arma.h"
-
-1750822346 d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\include\gameplay.h
-	<SFML/Graphics.hpp>
-	"Personaje.h"
-	"EntityManager.h"
-	"PauseMenu.h"
-	"SoundManager.h"
-
-1750782676 shed changes
-	<SFML/Graphics.hpp>
-	<SFML/Graphics/View.hpp>
-	"Personaje.h"
 	"Personaje.h"
 	"Menu.h"
 	"SoundManager.h"
 	<vector>
 	"Entity.h"
 	<SFML/Graphics.hpp>
+
+1750829047 source:d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\main.cpp
+	<SFML/Graphics.hpp>
+	<memory>
+	"Menu.h"
+	"Gameplay.h"
+	"SoundManager.h"
+
+1749566839 hics.hpp>
+	"PauseMenu.h"
+	"ChunkManager.h"
+
+1750824178 shed changes
+	"Menu.h"
+	"Gameplay.h"
+	"SoundManager.h"
+	<SFML/Graphics.hpp>
+	"Gameplay.h"
+	"EntityManager.h"
+	"Personaje.h"
+	<SFML/Audio.hpp>
+	<string>
+	"SoundManager.h"
+	<stdexcept>
+	"Entity.h"
+	"EntityManager.h"
+	"Enemigo.h"
+	"Boss.h"
+	"PocionDeVida.h"
+	"GemaDeExperiencia.h"
+	<cmath>
+	"PauseMenu.h"
+	<stdexcept>
+	"iostream"
+
+1750829071 d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\include\gameplay.h
+	<SFML/Graphics.hpp>
+	"Personaje.h"
+	"EntityManager.h"
+	"PauseMenu.h"
+	"SoundManager.h"
 
 1525812018 d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\sfml\include\sfml\graphics.hpp
 	<SFML/Window.hpp>
@@ -868,30 +890,28 @@
 	<SFML/Graphics/Drawable.hpp>
 	<SFML/Window/GlResource.hpp>
 
-1750821510 d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\include\personaje.h
+1750828353 d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\include\personaje.h
 	"Entity.h"
 
-1750823462 source:d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\src\gameplay.cpp
+1750829047 source:d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\src\gameplay.cpp
 	"Gameplay.h"
 	"CollisionManager.h"
 	<iostream>
 
-1749566839 hics.hpp>
-
-1750821525 source:d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\src\personaje.cpp
+1750828363 source:d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\src\personaje.cpp
 	"Personaje.h"
 	<SFML/Window/Keyboard.hpp>
 	<iostream>
 
-1750823281 source:d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\src\menu.cpp
+1750829047 source:d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\src\menu.cpp
 	"Menu.h"
 	"SoundManager.h"
 
-1750823197 d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\include\menu.h
+1750829047 d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\include\menu.h
 	<SFML/Graphics.hpp>
 	"SoundManager.h"
 
-1750822533 d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\include\soundmanager.h
+1750829047 d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\include\soundmanager.h
 	<SFML/Audio.hpp>
 	<string>
 
@@ -999,7 +1019,7 @@
 	<SFML/Audio/Export.hpp>
 	<string>
 
-1750822724 source:d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\src\soundmanager.cpp
+1750829047 source:d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\src\soundmanager.cpp
 	"SoundManager.h"
 	<stdexcept>
 
@@ -1430,10 +1450,10 @@
 
 1750257032 c:\users\herna\downloads\no-te-mueras-survivor-mnsueldo-patch-2\include\entitymanager.h
 
-1750821503 d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\include\entity.h
+1750828349 d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\include\entity.h
 	<SFML/Graphics.hpp>
 
-1750823788 d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\include\entitymanager.h
+1750829230 d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\include\entitymanager.h
 	<vector>
 	"Entity.h"
 	<SFML/Graphics.hpp>
@@ -1634,17 +1654,39 @@
 
 1750633312 "
 
-1750823637 source:d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\src\enemigo.cpp
+1750726061 source:d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\src\enemigo.cpp
 	"Enemigo.h"
 	<cmath>
 
-1750823602 d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\include\enemigo.h
+1750828348 d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\include\enemigo.h
 	"Entity.h"
+
+1750828358 source:d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\src\boss.cpp
+	"Boss.h"
+	<cmath>
+
+1750828033 d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\include\boss.h
+	"Entity.h"
+
+1750826720 source:d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\src\chunkmanager.cpp
+	<iostream>
+	"ChunkManager.h"
+	<cmath>
+	<cstdlib>
+
+1750826720 d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\include\chunkmanager.h
+	<SFML/Graphics.hpp>
+	<map>
+	<vector>
+	"TileMap.h"
+
+1750826720 d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\include\tilemap.h
+	<SFML/Graphics.hpp>
 
 1750662491 source:d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\src\entity.cpp
 	"Entity.h"
 
-1750823709 source:d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\src\entitymanager.cpp
+1750224903 source:d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\src\entitymanager.cpp
 	"EntityManager.h"
 	"Enemigo.h"
 	"Boss.h"
@@ -1666,19 +1708,19 @@
 	"PocionDeVida.h"
 	<cmath>
 
-1750821516 source:d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\src\boss.cpp
-	"Boss.h"
-	<cmath>
-
-1750824178 d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\include\boss.h
-	"Entity.h"
-
-1750823169 source:d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\src\pausemenu.cpp
+1750829047 source:d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\src\pausemenu.cpp
 	"PauseMenu.h"
 	<stdexcept>
 	"iostream"
 
-1750822533 d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\include\pausemenu.h
+1750826720 source:d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\src\tilemap.cpp
+	"TileMap.h"
+	<iostream>
+
+1750826720 source:d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\src\chunk.cpp
+	<cstdlib>
+
+1750828351 d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\include\pausemenu.h
 	<SFML/Graphics.hpp>
 	"SoundManager.h"
 
@@ -1687,7 +1729,7 @@
 	"Proyectil.h"
 	<iostream>
 
-1750822295 d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\include\collisionmanager.h
+1750829230 d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\include\collisionmanager.h
 	"EntityManager.h"
 	"Personaje.h"
 	"Enemigo.h"
@@ -1714,25 +1756,5 @@
 	"Personaje.h"
 	"EntityManager.h"
 
-1750818393 d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\include\chunkmanager.h
-	<SFML/Graphics.hpp>
-	<map>
-	<vector>
-	"TileMap.h"
-
-1750818393 d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\include\tilemap.h
-	<SFML/Graphics.hpp>
-
-1750818393 source:d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\src\chunk.cpp
-	<cstdlib>
-
-1750818393 source:d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\src\chunkmanager.cpp
-	<iostream>
-	"ChunkManager.h"
-	<cmath>
-	<cstdlib>
-
-1750818393 source:d:\recursos-utn-para-estudiar\primer-cuatri 2025\programacion2\proyectos\pruebajuegosuv\src\tilemap.cpp
-	"TileMap.h"
-	<iostream>
+1750818393 
 

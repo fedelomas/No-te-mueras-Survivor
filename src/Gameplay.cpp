@@ -3,6 +3,7 @@
 #include <iostream>
 
 Gameplay::Gameplay(SoundManager& soundManager)
+
     : window(sf::VideoMode(1000, 650), "SurvivorPrueba"),
       soundManager(soundManager),
       pauseMenu(window, soundManager)
@@ -19,16 +20,24 @@ Gameplay::Gameplay(SoundManager& soundManager)
 
     if (!enemigoTexture1.loadFromFile("Assets/Enemies/1/RunSD.png"))
         throw std::runtime_error("No se pudo cargar textura de enemigo 1");
+
     if (!enemigoTexture2.loadFromFile("Assets/Enemies/2/RunSD.png"))
         throw std::runtime_error("No se pudo cargar textura del enemigo 2");
+
     if (!enemigoTexture3.loadFromFile("Assets/Enemies/3/RunSD.png"))
         throw std::runtime_error("No se pudo cargar textura del enemigo 3");
+
     if (!enemigoTexture4.loadFromFile("Assets/Enemies/4/RunSD.png"))
         throw std::runtime_error("No se pudo cargar textura del enemigo 4");
+
     if (!enemigoTexture5.loadFromFile("Assets/Enemies/5/RunSD.png"))
         throw std::runtime_error("No se pudo cargar textura del enemigo 5");
+
     if (!enemigoTexture6.loadFromFile("Assets/Enemies/6/RunSD.png"))
         throw std::runtime_error("No se pudo cargar textura del enemigo 6");
+
+
+
 
     if (!pocionTexture.loadFromFile("Assets/Drops/pocion.png"))
         throw std::runtime_error("No se pudo cargar textura de pocion");
@@ -36,7 +45,18 @@ Gameplay::Gameplay(SoundManager& soundManager)
     if (!xpTexture.loadFromFile("Assets/Drops/gema.png"))
         throw std::runtime_error("No se pudo cargar textura de la gema");
 
+
+
+
+
+
+
+
+
+
     personaje = new Personaje(playerTexture);
+
+
 
     std::vector<sf::Texture*> enemyTextures = {
         &enemigoTexture1, &enemigoTexture2, &enemigoTexture3,
@@ -48,6 +68,7 @@ Gameplay::Gameplay(SoundManager& soundManager)
     entityManager.setXpTexture(xpTexture);
 
     entityManager.spawnEnemyWave(24, personaje->getPosition(), 500.f);
+
     entityManager.spawnPotion(pocionTexture, { 200.f, 0.f });
     entityManager.spawnGema(xpTexture, { -200.f, 0.f });
 
@@ -82,6 +103,7 @@ int Gameplay::run()
             return 0;
         }
 
+
         float deltaTime = clock.restart().asSeconds();
 
         handleEvents();
@@ -112,6 +134,8 @@ void Gameplay::handleEvents()
 
 void Gameplay::update(float deltaTime)
 {
+
+
     personaje->update(deltaTime, view);
     entityManager.update(deltaTime, view);
 
@@ -125,6 +149,7 @@ void Gameplay::render()
 
     window.setView(view);
     window.draw(backgroundMap);
+
     entityManager.render(window);
     window.draw(*personaje);
 
