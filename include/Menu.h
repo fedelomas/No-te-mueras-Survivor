@@ -4,7 +4,7 @@
 
 class Menu {
 public:
-    Menu(sf::RenderWindow& window);
+    Menu(sf::RenderWindow& window, SoundManager& soundManager, bool hayPartidaEnPausa);
     int run();
     void processEvents();
     void render();
@@ -24,10 +24,13 @@ private:
 
     bool musicEnabled = true;  // Estado de la música (activada por defecto)
     bool soundEnabled = true;  // Estado de los efectos de sonido (activados por defecto)
+    bool hayPartidaEnPausa;
 
     int selectedIndex;
+    int estadoFinal = 0;
     enum MenuState { MAIN_MENU, OPTIONS_MENU };
     MenuState menuState = MAIN_MENU;
 
-    SoundManager soundManager;  // Manejo de sonidos
+
+    SoundManager& soundManager;
 };

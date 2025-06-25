@@ -43,6 +43,7 @@
 			<Add directory="SFML/lib" />
 		</Linker>
 		<Unit filename="include/Boss.h" />
+		<Unit filename="include/Chunk.h" />
 		<Unit filename="include/ChunkManager.h" />
 		<Unit filename="include/Enemigo.h" />
 		<Unit filename="include/Entity.h" />
@@ -50,12 +51,14 @@
 		<Unit filename="include/Gameplay.h" />
 		<Unit filename="include/GemaDeExperiencia.h" />
 		<Unit filename="include/Menu.h" />
+		<Unit filename="include/PauseMenu.h" />
 		<Unit filename="include/Personaje.h" />
 		<Unit filename="include/PocionDeVida.h" />
 		<Unit filename="include/SoundManager.h" />
 		<Unit filename="include/TileMap.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Boss.cpp" />
+		<Unit filename="src/Chunk.cpp" />
 		<Unit filename="src/ChunkManager.cpp" />
 		<Unit filename="src/Enemigo.cpp" />
 		<Unit filename="src/Entity.cpp" />
@@ -63,6 +66,7 @@
 		<Unit filename="src/Gameplay.cpp" />
 		<Unit filename="src/GemaDeExperiencia.cpp" />
 		<Unit filename="src/Menu.cpp" />
+		<Unit filename="src/PauseMenu.cpp" />
 		<Unit filename="src/Personaje.cpp" />
 		<Unit filename="src/PocionDeVida.cpp" />
 		<Unit filename="src/SoundManager.cpp" />
