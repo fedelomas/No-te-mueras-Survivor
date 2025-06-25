@@ -7,14 +7,6 @@ class EntityManager {
 private:
     std::vector<Entity*> entities;
 
-    sf::Clock xpSpawnClock;
-    sf::Clock pocionSpawnClock;
-    float xpSpawnInterval = 5.f;
-    float pocionSpawnInterval = 10.f;
-
-    int cantidadXP = 5;
-    int cantidadPociones = 3;
-
     std::vector<sf::Texture*> enemyTextures;
     sf::Texture* xpTexture = nullptr;
     sf::Texture* pocionTexture = nullptr;
@@ -36,7 +28,6 @@ public:
     void spawnGema(sf::Texture& texture, sf::Vector2f posicion);
 
     void setEnemyTextures(const std::vector<sf::Texture*>& textures);
-    void setBossTexture(sf::Texture& texture);
-    void setPocionTexture(sf::Texture& texture);
-    void setXpTexture(sf::Texture& texture);
+
+    std::vector<Entity*>& getEntities() { return entities; }
 };

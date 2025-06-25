@@ -3,11 +3,15 @@
 
 class Boss : public Entity {
 public:
-    Boss(sf::Texture& texture, const sf::Vector2f& posicionInicial, float velocidad = 20.f, float escala = 4.f );
+    Boss(sf::Texture& texture, const sf::Vector2f& posicionInicial, float velocidad = 10.f, float escala = 3.0f );
 
     void update(float deltaTime, sf::View& view) override;
 
+    sf::Clock clockAtaque;
+    float intervaloAtaque = 2.5f;
+
 private:
     void actualizarAnimacion();
+    float escalaBase = 1.5f;
 };
 

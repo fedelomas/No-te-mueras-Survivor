@@ -4,7 +4,7 @@
 
 class PauseMenu {
 public:
-    PauseMenu(sf::RenderWindow& win, SoundManager& sm);
+    PauseMenu(sf::RenderWindow& win, SoundManager& soundManager);
     void processEvent(const sf::Event& event);
     void render();
     void resetReturnToMainMenu();

@@ -4,6 +4,7 @@
 #include "Enemigo.h"
 #include "PocionDeVida.h"
 #include "GemaDeExperiencia.h"
+#include "Boss.h"
 
 class CollisionManager {
 private:
