@@ -11,9 +11,7 @@ public:
     sf::Clock flashClock;
     bool estaRecibiendoDanio = false;
     void recibirDanio(int cantidad);
-    //sf::FloatRect getHitbox() const override;
-
-
+    bool estaSiendoCurado = false;
     void curar(int cantidad);
     void ganarXP(int cantidad);
     void kill() override;

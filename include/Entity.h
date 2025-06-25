@@ -29,7 +29,7 @@ public:
     sf::Vector2f getPosition() const;
     void setPosition(const sf::Vector2f& pos);
     sf::FloatRect getBounds() const;
-    //virtual sf::FloatRect getHitbox() const = 0;
+    virtual sf::FloatRect getHitbox() const;
 
 
 };
